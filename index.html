@@ -5,6 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cliente</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos rápidos para o formulário e a lista */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .lista-container {
+            margin-top: 50px;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .clientes-lista {
+            list-style: none;
+            padding: 0;
+        }
+        .clientes-lista li {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
 
@@ -37,10 +104,40 @@
         </form>
     </div>
 
+    <!-- Seção onde os clientes cadastrados serão listados -->
+    <div class="lista-container">
+        <h3>Clientes Cadastrados</h3>
+        <ul id="lista-clientes" class="clientes-lista">
+            <!-- Clientes serão listados aqui -->
+        </ul>
+    </div>
+
+    <script>
+        // Selecionando o formulário e a lista de clientes
+        const form = document.getElementById('form-cadastro');
+        const listaClientes = document.getElementById('lista-clientes');
+
+        // Adicionando evento para enviar o formulário
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Pegando os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const nascimento = document.getElementById('nascimento').value;
+
+            // Criando um novo item de lista para o cliente cadastrado
+            const li = document.createElement('li');
+            li.textContent = `Nome: ${nome}, E-mail: ${email}, Telefone: ${telefone}, Nascimento: ${nascimento}`;
+            
+            // Adicionando o item à lista de clientes
+            listaClientes.appendChild(li);
+
+            // Limpando o formulário
+            form.reset();
+        });
+    </script>
+
 </body>
 </html>
-<div class="lista-container">
-    <h3>Clientes Cadastrados</h3>
-    <ul id="lista-clientes">
-        </ul>
-</div>
