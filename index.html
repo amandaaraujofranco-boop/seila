@@ -54,15 +54,10 @@
         button:hover {
             background-color: #45a049;
         }
-        .lista-container {
-            margin-top: 50px;
-            width: 80%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
         .clientes-lista {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
         }
         .clientes-lista li {
             background: #f9f9f9;
@@ -101,15 +96,13 @@
             </div>
 
             <button type="submit" class="btn-enviar">Cadastrar Cliente</button>
-        </form>
-    </div>
 
-    <!-- Seção onde os clientes cadastrados serão listados -->
-    <div class="lista-container">
-        <h3>Clientes Cadastrados</h3>
-        <ul id="lista-clientes" class="clientes-lista">
-            <!-- Clientes serão listados aqui -->
-        </ul>
+            <!-- Seção onde os clientes cadastrados serão listados, logo abaixo do botão -->
+            <h3>Clientes Cadastrados</h3>
+            <ul id="lista-clientes" class="clientes-lista">
+                <!-- Os clientes cadastrados serão exibidos aqui -->
+            </ul>
+        </form>
     </div>
 
     <script>
