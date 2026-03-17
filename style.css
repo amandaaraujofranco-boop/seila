@@ -81,3 +81,30 @@ h2 {
 .btn-enviar:hover {
     opacity: 0.9;
 }
+.lista-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px; /* Espaço entre o form e a lista */
+}
+
+#lista-clientes {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#lista-clientes li {
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    color: #444;
+}
+
+#lista-clientes li:last-child {
+    border-bottom: none;
+}
